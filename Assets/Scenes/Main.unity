@@ -1109,7 +1109,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 454108982}
         m_TargetAssemblyTypeName: View.VController, Assembly-CSharp
-        m_MethodName: OnClick_Pause
+        m_MethodName: OnClick_Exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
