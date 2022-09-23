@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 63335913}
   - component: {fileID: 63335912}
   - component: {fileID: 63335911}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2068,7 +2068,7 @@ GameObject:
   - component: {fileID: 631268882}
   - component: {fileID: 631268881}
   - component: {fileID: 631268880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2998,7 +2998,7 @@ GameObject:
   - component: {fileID: 1064306811}
   - component: {fileID: 1064306810}
   - component: {fileID: 1064306809}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4030,6 +4030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cf05c8b42a774880a8e622fa572a6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mController: {fileID: 246897259}
 --- !u!1 &1828225585
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,7 +4043,7 @@ GameObject:
   - component: {fileID: 1828225589}
   - component: {fileID: 1828225588}
   - component: {fileID: 1828225587}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -34,5 +34,15 @@ namespace Model
 			vController.GameOver();
 			Time.timeScale = 0;
 		}
+
+		public void MoveAttack(Vector3 position)
+		{
+			mPlaceInstantiate.MoveAttack(position);
+		}
+
+		public void PushAttack()
+		{
+			mPlaceInstantiate.PushAttack();
+		}
 	}
 }
