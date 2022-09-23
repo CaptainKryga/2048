@@ -1,7 +1,16 @@
+using UnityEngine;
+
 namespace Model
 {
-	public class Cube
+	public class Cube : MonoBehaviour
 	{
+		[SerializeField] private MeshRenderer meshRenderer;
+		public int Size { get; private set; }
 		
+		public void Init(Material material, int size)
+		{
+			meshRenderer.material = material;
+			Size = size;
+		}
 	}
 }

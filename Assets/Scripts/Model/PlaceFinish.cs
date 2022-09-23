@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Model
 {
-	public class WallInstantiate : MonoBehaviour
+	public class PlaceFinish : MonoBehaviour
 	{
 		
 	}

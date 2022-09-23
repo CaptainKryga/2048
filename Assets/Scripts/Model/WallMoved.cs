@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace Model
 {
-	public class WallMoved
+	public class WallMoved : MonoBehaviour
 	{
 		
 	}
