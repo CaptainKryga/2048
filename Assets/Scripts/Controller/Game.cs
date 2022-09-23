@@ -6,9 +6,19 @@ namespace Controller
 	{
 		[SerializeField] private Model.MController mController;
 
-		public void RestartGame()
+		public void Restart()
 		{
-			mController.RestartGame();
+			mController.Restart();
+		}
+
+		public void Pause()
+		{
+			mController.Pause();
+		}
+
+		public void Continue()
+		{
+			mController.Continue();
 		}
 	}
 }

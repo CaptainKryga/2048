@@ -8,7 +8,7 @@ namespace Controller
 
 		private void Start()
 		{
-			game.RestartGame();
+			game.Restart();
 		}
 	}
 }

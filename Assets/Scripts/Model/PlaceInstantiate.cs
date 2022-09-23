@@ -11,7 +11,7 @@ namespace Model
 		[SerializeField] private Transform pointAttack;
 		[SerializeField] private Transform[] pointsWall;
 		
-		public void RestartGame()
+		public void Restart()
 		{
 			ClearScene();
 			CreateWall();

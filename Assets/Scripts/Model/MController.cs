@@ -10,9 +10,25 @@ namespace Model
 
 		[SerializeField] private View.VController vController;
 		
-		public void RestartGame()
+		public void Restart()
 		{
-			mPlaceInstantiate.RestartGame();
+			mPlaceInstantiate.Restart();
+			vController.Restart();
+		}
+
+		public void Pause()
+		{
+			vController.Pause();
+		}
+
+		public void Continue()
+		{
+			vController.Continue();
+		}
+
+		public void GameOver()
+		{
+			vController.GameOver();
 		}
 	}
 }

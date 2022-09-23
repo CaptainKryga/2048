@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 26072798}
   - component: {fileID: 26072797}
   m_Layer: 0
-  m_Name: BtnReload
+  m_Name: BtnRestart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 26072798}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 454108982}
+        m_TargetAssemblyTypeName: View.VController, Assembly-CSharp
+        m_MethodName: OnClick_Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &26072798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,7 +1154,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 284313737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 454108982}
+        m_TargetAssemblyTypeName: View.VController, Assembly-CSharp
+        m_MethodName: OnClick_Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &284313737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,7 +1330,7 @@ GameObject:
   - component: {fileID: 429392852}
   - component: {fileID: 429392851}
   m_Layer: 0
-  m_Name: BtnPlay
+  m_Name: BtnContinue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,7 +1400,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 429392852}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 454108982}
+        m_TargetAssemblyTypeName: View.VController, Assembly-CSharp
+        m_MethodName: OnClick_Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &429392852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,6 +1495,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d5f3f0486d43e883a0d606536d6019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cGame: {fileID: 419274529}
+  panelGame: {fileID: 601463959}
+  panelPause: {fileID: 1984701751}
+  panelRestart: {fileID: 2067965070}
 --- !u!1 &551380428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,12 +3497,12 @@ GameObject:
   - component: {fileID: 1984701754}
   - component: {fileID: 1984701753}
   m_Layer: 0
-  m_Name: Pause
+  m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1984701752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3772,7 +3812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2067965071
 RectTransform:
   m_ObjectHideFlags: 0
