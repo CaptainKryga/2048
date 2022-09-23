@@ -19,16 +19,19 @@ namespace Model
 		public void Pause()
 		{
 			vController.Pause();
+			Time.timeScale = 0;
 		}
 
 		public void Continue()
 		{
 			vController.Continue();
+			Time.timeScale = 1;
 		}
 
 		public void GameOver()
 		{
 			vController.GameOver();
+			Time.timeScale = 0;
 		}
 	}
 }
