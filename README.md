@@ -1,8 +1,9 @@
 # prototype_game-2048
 
-
+        //инициализация сцены под платформу
+        //Controller.Init
 		//старт зачистка сцены
-		//Controller.ModelController
+		//Controller.Model
 		//генерация стенки кубов
 		//Model.WallInstantiate
 		//движение стенки у генератора кубов
@@ -10,7 +11,7 @@
 		//генерация атакующего куба
 		//Model.AttackInstantiate
 		//выбор и запуск атакующего куба
-		//Controller.MouseController
+		//Controller.Mouse
 		//куб объединение
 		//Model.Cube
 		//подсчёт очков
@@ -18,5 +19,5 @@
 		//триггер финиша конец игры
 		//Model.Finish
 		//пауза
-		//Model.ModelController
-		//View.ViewController
+		//Model.Model
+		//View.Controller
