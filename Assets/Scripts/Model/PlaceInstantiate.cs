@@ -44,7 +44,7 @@ namespace Model
 				wallMoved.StartMove(timer);
 			}
 
-			if (!isAttack && delayAttack < 0)
+			if (isAttack && delayAttack < 0)
 			{
 				CreateAttack();
 			}
@@ -60,7 +60,7 @@ namespace Model
 
 		private void CreateAttack()
 		{
-			isAttack = true;
+			isAttack = false;
 			attack = GenerateCube(pointAttack).GetComponent<Rigidbody>();
 		}
 
@@ -77,7 +77,7 @@ namespace Model
 			Cube cube = Instantiate(database.prefab, 
 				pos.position, pos.rotation, 
 				parent).GetComponent<Cube>();
-			int rnd = Random.Range(0, statistics.MaxRank + 1);
+			int rnd = Random.Range(0, statistics.MaxRank);
 			cube.Init(database.materials[rnd], rnd, this);
 			cube.size = (int)Mathf.Pow(2, rnd + 1);
 
@@ -117,7 +117,7 @@ namespace Model
 		{
 			if (!attack)
 				return;
-			
+
 			float x = position.x;
 			if (x < -4.5f || x > 4.5f)
 				return;
@@ -135,7 +135,7 @@ namespace Model
 			attack = null;
 
 			delayAttack = 1f;
-			isAttack = false;
+			isAttack = true;
 		}
 	}
 }

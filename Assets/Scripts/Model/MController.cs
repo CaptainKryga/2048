@@ -12,9 +12,9 @@ namespace Model
 		
 		public void Restart()
 		{
-			mPlaceInstantiate.Restart();
-			vController.Restart();
 			mStatistics.Restart();
+			vController.Restart();
+			mPlaceInstantiate.Restart();
 			Time.timeScale = 1;
 		}
 
