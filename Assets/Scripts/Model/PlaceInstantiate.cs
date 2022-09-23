@@ -21,7 +21,9 @@ namespace Model
 		private void CreateAttack()
 		{
 			int maxRnd = statistics.MaxSize;
-			Cube cube = Instantiate(database.prefab, pointAttack, parent).GetComponent<Cube>();
+			Cube cube = Instantiate(database.prefab, 
+				pointAttack.position, pointAttack.rotation, 
+				parent).GetComponent<Cube>();
 			int rnd = Random.Range(0, maxRnd);
 			cube.Init(database.materials[rnd], rnd);
 		}
@@ -31,7 +33,9 @@ namespace Model
 			int maxRnd = statistics.MaxSize;
 			for (int i = 0; i < pointsWall.Length; i++)
 			{
-				Cube cube = Instantiate(database.prefab, pointsWall[i], parent).GetComponent<Cube>();
+				Cube cube = Instantiate(database.prefab, 
+					pointsWall[i].position, pointsWall[i].rotation, 
+					parent).GetComponent<Cube>();
 				int rnd = Random.Range(0, maxRnd);
 				cube.Init(database.materials[rnd], rnd);
 			}

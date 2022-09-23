@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08749b8ee33e47d48caf32ce4fb9a46c, type: 3}
   m_Name: Database
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  materials: []
+  prefab: {fileID: 2131166183207276959, guid: 6500af74091e14288a77e0fe56223092, type: 3}
+  materials:
+  - {fileID: 2100000, guid: cc60eb5181cc2409b94f977b7e18be46, type: 2}
+  - {fileID: 2100000, guid: 51b7315eab8c04026816db97c1712a84, type: 2}
+  - {fileID: 2100000, guid: 64243a7ca701549de8ac303dee1026da, type: 2}
+  - {fileID: 2100000, guid: 94e5de6fdf7174b67a1dc3fc9fb8222e, type: 2}
+  - {fileID: 2100000, guid: f4a971f007ed64765afcd3f8dbe1e749, type: 2}
+  - {fileID: 2100000, guid: 3b3e8312571424e6e931fba63f905e02, type: 2}
+  - {fileID: 2100000, guid: a9fbe917a09d14a98833675e1c425e90, type: 2}
+  - {fileID: 2100000, guid: 68e6bd714fc934534adeb0e0992d06b0, type: 2}
+  - {fileID: 2100000, guid: e36534eceb28a4baa9220c252326ec59, type: 2}
+  - {fileID: 2100000, guid: 652c4b1773c2d4fb498222bee513911f, type: 2}
+  - {fileID: 2100000, guid: 3a69cbf7dc42e4e91911764ac7010e7f, type: 2}
+  - {fileID: 2100000, guid: f5feea9ef8d86479d87c16bb121c6a44, type: 2}
