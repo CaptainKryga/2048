@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Model
 {
@@ -6,11 +7,39 @@ namespace Model
 	{
 		[SerializeField] private Database database;
 		[SerializeField] private Statistics statistics;
+
+		[SerializeField] private WallMoved wallMoved;
 		
 		[SerializeField] private Transform parent;
 		[SerializeField] private Transform pointAttack;
 		[SerializeField] private Transform[] pointsWall;
+
+		[SerializeField] private float timer;
+		private float delay;
 		
+		public bool IsPause { get; set; }
+		
+
+		private void Start()
+		{
+			IsPause = false;
+		}
+
+		private void Update()
+		{
+			if (IsPause)
+				return;
+
+			if (delay <= 0)
+			{
+				CreateWall();
+				
+				delay = timer;
+				wallMoved.StartMove(timer);
+			}
+			
+		}
+
 		public void Restart()
 		{
 			ClearScene();
