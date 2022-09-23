@@ -2348,7 +2348,7 @@ MonoBehaviour:
   - {fileID: 26478089}
   - {fileID: 1159261678}
   - {fileID: 981505346}
-  timer: 5
+  timer: 6
 --- !u!1 &791845549
 GameObject:
   m_ObjectHideFlags: 0

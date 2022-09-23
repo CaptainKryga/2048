@@ -14,6 +14,7 @@ namespace Model
 		{
 			mPlaceInstantiate.Restart();
 			vController.Restart();
+			mStatistics.Restart();
 			Time.timeScale = 1;
 		}
 

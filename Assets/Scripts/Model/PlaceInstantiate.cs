@@ -17,8 +17,9 @@ namespace Model
 		private Rigidbody attack;
 
 		[SerializeField] private float timer;
-		private float delay;
+		private float delay, delayAttack;
 
+		private bool isAttack;
 		public bool IsPause { get; set; }
 
 		private void Start()
@@ -33,6 +34,7 @@ namespace Model
 				return;
 
 			delay -= Time.deltaTime;
+			delayAttack -= Time.deltaTime;
 			
 			if (delay <= 0)
 			{
@@ -40,6 +42,11 @@ namespace Model
 				
 				delay = timer;
 				wallMoved.StartMove(timer);
+			}
+
+			if (!isAttack && delayAttack < 0)
+			{
+				CreateAttack();
 			}
 		}
 
@@ -53,6 +60,7 @@ namespace Model
 
 		private void CreateAttack()
 		{
+			isAttack = true;
 			attack = GenerateCube(pointAttack).GetComponent<Rigidbody>();
 		}
 
@@ -86,7 +94,7 @@ namespace Model
 
 		public void ReInitCube(Cube cube)
 		{
-			statistics.Score = cube.size;
+			statistics.ScoreAdd(cube.size);
 			cube.size *= 2;
 
 			int num = 0;
@@ -102,7 +110,7 @@ namespace Model
 			else
 				cube.Init(database.materials[num]);
 			
-			statistics.MaxSize = cube.size;
+			statistics.MaxSizeAdd(cube.size);
 		}
 
 		public void MoveAttack(Vector3 position)
@@ -125,8 +133,9 @@ namespace Model
 			
 			attack.velocity = -Vector3.forward * 30;
 			attack = null;
-			
-			Invoke("CreateAttack", 1);
+
+			delayAttack = 1f;
+			isAttack = false;
 		}
 	}
 }

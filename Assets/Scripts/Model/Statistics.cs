@@ -11,33 +11,32 @@ namespace Model
 		private int maxSize;
 		private int maxRank;
 		
-		public int Score
+		public int Score { get; private set; }
+
+		public int MaxSize { get; private set; }
+
+		public int MaxRank { get; private set; }
+
+		public void ScoreAdd(int score)
 		{
-			get => score;
-			set
-			{
-				score += value;
-				vController.UpdateScore(score);
-			}
+			Score += score;
+			vController.UpdateScore(Score);
 		}
 
-		public int MaxSize
+		public void MaxSizeAdd(int size)
 		{
-			get => maxSize;
-			set
+			if (MaxSize < size)
 			{
-				if (maxSize < value)
-				{
-					maxSize = value;
-					maxRank++;
-				}
+				MaxSize = size;
+				MaxSize++;
 			}
 		}
-
-		public int MaxRank
+		
+		public void Restart()
 		{
-			get => maxRank;
-			private set => maxRank = value;
+			Score = 0;
+			MaxSize = 0;
+			MaxRank = 0;
 		}
 	}
 }
