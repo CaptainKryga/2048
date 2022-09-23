@@ -14,6 +14,7 @@ namespace Model
 		{
 			mPlaceInstantiate.Restart();
 			vController.Restart();
+			Time.timeScale = 1;
 		}
 
 		public void Pause()

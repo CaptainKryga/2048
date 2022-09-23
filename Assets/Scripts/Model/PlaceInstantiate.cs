@@ -70,6 +70,7 @@ namespace Model
 					parent).GetComponent<Cube>();
 				int rnd = Random.Range(0, maxRnd);
 				cube.Init(database.materials[rnd], rnd);
+				cube.IsActive = true;
 			}
 		}
 

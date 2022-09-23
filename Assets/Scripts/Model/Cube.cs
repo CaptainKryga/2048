@@ -6,6 +6,7 @@ namespace Model
 	{
 		[SerializeField] private MeshRenderer meshRenderer;
 		public int Size { get; private set; }
+		public bool IsActive { get; set; } 
 		
 		public void Init(Material material, int size)
 		{
