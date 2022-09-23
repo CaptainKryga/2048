@@ -467,9 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32422b407e74f8095af598b031dbd4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall: {fileID: 230982056}
-  pointStart: {fileID: 884248008}
-  pointEnd: {fileID: 1057184365}
+  aWall: {fileID: 230982061}
 --- !u!1 &63335909
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +940,7 @@ GameObject:
   - component: {fileID: 230982058}
   - component: {fileID: 230982057}
   - component: {fileID: 230982060}
+  - component: {fileID: 230982061}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1043,6 +1042,22 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!111 &230982061
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230982055}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4e41ef4a445ed4879acc9bc1c5f2e31c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4e41ef4a445ed4879acc9bc1c5f2e31c, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &242527465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,7 +2333,7 @@ MonoBehaviour:
   - {fileID: 26478089}
   - {fileID: 1159261678}
   - {fileID: 981505346}
-  timer: 0
+  timer: 5
 --- !u!1 &791845549
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &884248008
 Transform:
   m_ObjectHideFlags: 0
@@ -2442,7 +2457,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884248007}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.47, z: -9.83}
+  m_LocalPosition: {x: 0, y: -0.47, z: -12.48}
   m_LocalScale: {x: 1, y: 3, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2456,7 +2471,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884248007}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2891,7 +2906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1057184365
 Transform:
   m_ObjectHideFlags: 0
@@ -2914,7 +2929,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057184364}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

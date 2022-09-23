@@ -23,6 +23,7 @@ namespace Model
 		private void Start()
 		{
 			IsPause = false;
+			delay = timer;
 		}
 
 		private void Update()
@@ -30,6 +31,8 @@ namespace Model
 			if (IsPause)
 				return;
 
+			delay -= Time.deltaTime;
+			
 			if (delay <= 0)
 			{
 				CreateWall();
@@ -37,7 +40,6 @@ namespace Model
 				delay = timer;
 				wallMoved.StartMove(timer);
 			}
-			
 		}
 
 		public void Restart()
@@ -45,6 +47,7 @@ namespace Model
 			ClearScene();
 			CreateWall();
 			CreateAttack();
+			wallMoved.StartMove(timer);
 		}
 
 		private void CreateAttack()
