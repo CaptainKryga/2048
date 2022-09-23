@@ -20,5 +20,10 @@ namespace Controller
 		{
 			mController.Continue();
 		}
+
+		public void Exit()
+		{
+			Application.Quit();
+		}
 	}
 }

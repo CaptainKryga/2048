@@ -52,5 +52,10 @@ namespace View
 		{
 			cGame.Continue();
 		}
+
+		public void OnClick_Exit()
+		{
+			cGame.Exit();
+		}
 	}
 }
