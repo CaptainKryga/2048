@@ -9,12 +9,12 @@ public class TriggerGameOver : MonoBehaviour
 		Cube cube = other.GetComponent<Cube>();
 		if (cube)
 		{
-			if (cube.IsActive)
+			if (cube.isActive)
 			{
 				mController.GameOver();
 			}
 			else
-				cube.IsActive = true;
+				cube.isActive = true;
 		}
 	}
 }

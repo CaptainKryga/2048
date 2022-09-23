@@ -10,6 +10,8 @@ namespace View
 		[SerializeField] private GameObject panelPause;
 		[SerializeField] private GameObject panelRestart;
 
+		[SerializeField] private TMPro.TMP_Text textScore;
+
 		public void Restart()
 		{
 			panelGame.SetActive(true);
@@ -56,6 +58,11 @@ namespace View
 		public void OnClick_Exit()
 		{
 			cGame.Exit();
+		}
+
+		public void UpdateScore(int score)
+		{
+			textScore.text = "Score: " + score;
 		}
 	}
 }

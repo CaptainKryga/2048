@@ -18,9 +18,8 @@ namespace Model
 
 		[SerializeField] private float timer;
 		private float delay;
-		
+
 		public bool IsPause { get; set; }
-		
 
 		private void Start()
 		{
@@ -54,28 +53,27 @@ namespace Model
 
 		private void CreateAttack()
 		{
-			int maxRnd = statistics.MaxSize;
-			Cube cube = Instantiate(database.prefab, 
-				pointAttack.position, pointAttack.rotation, 
-				parent).GetComponent<Cube>();
-			int rnd = Random.Range(0, maxRnd);
-			cube.Init(database.materials[rnd], rnd);
-
-			attack = cube.GetComponent<Rigidbody>();
+			attack = GenerateCube(pointAttack).GetComponent<Rigidbody>();
 		}
 
 		public void CreateWall()
 		{
-			int maxRnd = statistics.MaxSize;
 			for (int i = 0; i < pointsWall.Length; i++)
 			{
-				Cube cube = Instantiate(database.prefab, 
-					pointsWall[i].position, pointsWall[i].rotation, 
-					parent).GetComponent<Cube>();
-				int rnd = Random.Range(0, maxRnd);
-				cube.Init(database.materials[rnd], rnd);
-				cube.IsActive = true;
+				GenerateCube(pointsWall[i]).isActive = true;
 			}
+		}
+
+		private Cube GenerateCube(Transform pos)
+		{
+			Cube cube = Instantiate(database.prefab, 
+				pos.position, pos.rotation, 
+				parent).GetComponent<Cube>();
+			int rnd = Random.Range(0, statistics.MaxRank + 1);
+			cube.Init(database.materials[rnd], rnd, this);
+			cube.size = (int)Mathf.Pow(2, rnd + 1);
+
+			return cube;
 		}
 
 		private void ClearScene()
@@ -84,6 +82,27 @@ namespace Model
 			{
 				Destroy(parent.GetChild(i).gameObject);
 			}
+		}
+
+		public void ReInitCube(Cube cube)
+		{
+			statistics.Score = cube.size;
+			cube.size *= 2;
+
+			int num = 0;
+			int size = cube.size;
+			while (size > 2)
+			{
+				size /= 2;
+				num++;
+			}
+	
+			if (num >= database.materials.Length)
+				Destroy(cube.gameObject);
+			else
+				cube.Init(database.materials[num]);
+			
+			statistics.MaxSize = cube.size;
 		}
 
 		public void MoveAttack(Vector3 position)
@@ -104,7 +123,7 @@ namespace Model
 			if (!attack)
 				return;
 			
-			attack.velocity = -Vector3.forward * 50;
+			attack.velocity = -Vector3.forward * 30;
 			attack = null;
 			
 			Invoke("CreateAttack", 1);

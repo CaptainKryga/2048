@@ -1,4 +1,3 @@
-using System;
 using Model;
 using UnityEngine;
 
@@ -28,8 +27,6 @@ namespace Controller
 			{
 				mController.PushAttack();
 				isDown = false;
-				
-				Debug.Log("PUSH");
 			}
 		}
 	}
