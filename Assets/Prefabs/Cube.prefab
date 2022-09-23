@@ -112,6 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 2070823671917705320}
+  size: 0
+  isActive: 0
+  isDestroy: 0
 --- !u!54 &7740285221945124684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -120,7 +123,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131166183207276959}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0.1
   m_AngularDrag: 0.2
   m_UseGravity: 1

@@ -37,7 +37,7 @@ namespace Model
 				{
 					cube.ReInit();
 					cube.GetComponent<Rigidbody>().velocity +=
-						Vector3.up * 6 +
+						Vector3.up * (Random.Range(0, 6)) +
 						Vector3.right * (Random.Range(0, 6) - 3) +
 						Vector3.forward * (Random.Range(0, 6) - 3);
 					isDestroy = true;

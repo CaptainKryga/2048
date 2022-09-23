@@ -17,6 +17,8 @@ namespace View
 			panelGame.SetActive(true);
 			panelPause.SetActive(false);
 			panelRestart.SetActive(false);
+			
+			UpdateScore(0);
 		}
 
 		public void Pause()

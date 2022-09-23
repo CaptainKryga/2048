@@ -28,7 +28,7 @@ namespace Model
 			if (MaxSize < size)
 			{
 				MaxSize = size;
-				MaxSize++;
+				MaxRank++;
 			}
 		}
 		
@@ -36,7 +36,7 @@ namespace Model
 		{
 			Score = 0;
 			MaxSize = 0;
-			MaxRank = 0;
+			MaxRank = 1;
 		}
 	}
 }
