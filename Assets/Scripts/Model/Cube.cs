@@ -8,6 +8,8 @@ namespace Model
 
 		private PlaceInstantiate placeInstantiate;
 
+		[SerializeField] private ParticleSystemRenderer particleSystemRender;
+		
 		private GameObject prefabParticle;
 
 		public int size;
@@ -19,12 +21,16 @@ namespace Model
 			meshRenderer.material = material;
 			this.size = size;
 			placeInstantiate = pi;
+		
+			particleSystemRender.material = material;
 		}
 
 		public void Init(Material material, GameObject prefabParticle)
 		{
 			meshRenderer.material = material;
 			this.prefabParticle = prefabParticle;
+
+			particleSystemRender.material = material;
 		}
 
 		public void ReInit()
