@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08749b8ee33e47d48caf32ce4fb9a46c, type: 3}
   m_Name: Database
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2131166183207276959, guid: 6500af74091e14288a77e0fe56223092, type: 3}
+  prefabCube: {fileID: 2131166183207276959, guid: 6500af74091e14288a77e0fe56223092, type: 3}
+  prefabParticle: {fileID: 8564761590371805563, guid: 5ae28805ecc8b494f8565d2c7fb564ed, type: 3}
   materials:
   - {fileID: 2100000, guid: cc60eb5181cc2409b94f977b7e18be46, type: 2}
   - {fileID: 2100000, guid: 51b7315eab8c04026816db97c1712a84, type: 2}

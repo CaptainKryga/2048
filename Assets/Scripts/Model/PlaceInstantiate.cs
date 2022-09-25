@@ -85,7 +85,7 @@ namespace Model
 
 		private Cube GenerateCube(Transform pos, bool isAttack)
 		{
-			Cube cube = Instantiate(database.prefab,
+			Cube cube = Instantiate(database.prefabCube,
 				pos.position, pos.rotation,
 				parent).GetComponent<Cube>();
 			int rnd = GetRarityCube(isAttack); 
@@ -145,7 +145,7 @@ namespace Model
 			if (num >= database.materials.Length)
 				Destroy(cube.gameObject);
 			else
-				cube.Init(database.materials[num]);
+				cube.Init(database.materials[num], database.prefabParticle);
 			
 			statistics.MaxSizeAdd(cube.size);
 		}
