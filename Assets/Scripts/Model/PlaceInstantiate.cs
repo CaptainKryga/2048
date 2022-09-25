@@ -46,6 +46,7 @@ namespace Model
 
 			if (isAttack && delayAttack < 0)
 			{
+				isAttack = false;
 				CreateAttack();
 			}
 
@@ -84,10 +85,11 @@ namespace Model
 
 		private Cube GenerateCube(Transform pos, bool isAttack)
 		{
-			Cube cube = Instantiate(database.prefab, 
-				pos.position, pos.rotation, 
+			Cube cube = Instantiate(database.prefab,
+				pos.position, pos.rotation,
 				parent).GetComponent<Cube>();
-			int rnd = GetRarityCube(); 
+			int rnd = GetRarityCube(isAttack); 
+			Debug.Log("rnd: " + rnd + " | " + statistics.MaxRank);
 			cube.Init(database.materials[rnd], rnd, this);
 			cube.size = (int)Mathf.Pow(2, rnd + 1);
 
@@ -96,10 +98,28 @@ namespace Model
 			return cube;
 		}
 
-		private int GetRarityCube()
+		private int GetRarityCube(bool isAttack)
 		{
+			if (isAttack)
+				return Random.Range(0, statistics.MaxRank);
+
+			int sum = 0;
+			for (int i = 0; i < statistics.MaxRank; i++)
+			{
+				sum += database.chanceDrop[i];
+			}
+
+			int rnd = Random.Range(0, sum);
 			
-			return Random.Range(0, statistics.MaxRank);
+			sum = 0;
+			for (int i = 0; i < statistics.MaxRank; i++)
+			{
+				sum += database.chanceDrop[i];
+				if (rnd > sum)
+					return i;
+			}
+
+			return 0;
 		}
 
 		private void ClearScene()

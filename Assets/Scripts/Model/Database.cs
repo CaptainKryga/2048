@@ -7,5 +7,7 @@ namespace Model
 	{
 		public GameObject prefab;
 		public Material[] materials;
+
+		public int[] chanceDrop;
 	}
 }
