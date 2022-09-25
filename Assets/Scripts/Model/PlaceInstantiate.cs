@@ -70,29 +70,36 @@ namespace Model
 
 		private void CreateAttack()
 		{
-			isAttack = false;
 			cubeAttack.ClearRigidbody();
-			cubeAttack.SetRigidbody(GenerateCube(pointAttack).GetComponent<Rigidbody>());
+			cubeAttack.SetRigidbody(GenerateCube(pointAttack, true).GetComponent<Rigidbody>());
 		}
 
 		public void CreateWall()
 		{
 			for (int i = 0; i < pointsWall.Length; i++)
 			{
-				GenerateCube(pointsWall[i]).isActive = true;
+				GenerateCube(pointsWall[i], false);
 			}
 		}
 
-		private Cube GenerateCube(Transform pos)
+		private Cube GenerateCube(Transform pos, bool isAttack)
 		{
 			Cube cube = Instantiate(database.prefab, 
 				pos.position, pos.rotation, 
 				parent).GetComponent<Cube>();
-			int rnd = Random.Range(0, statistics.MaxRank);
+			int rnd = GetRarityCube(); 
 			cube.Init(database.materials[rnd], rnd, this);
 			cube.size = (int)Mathf.Pow(2, rnd + 1);
 
+			cube.isActive = !isAttack;
+
 			return cube;
+		}
+
+		private int GetRarityCube()
+		{
+			
+			return Random.Range(0, statistics.MaxRank);
 		}
 
 		private void ClearScene()
