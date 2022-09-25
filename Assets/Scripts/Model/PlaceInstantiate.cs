@@ -53,7 +53,9 @@ namespace Model
 			if (isRestart && delaySecondRestart < 0)
 			{
 				isRestart = false;
+				isAttack = false;
 				CreateAttack();
+				wallMoved.StartMove(timer);
 			}
 		}
 
@@ -73,6 +75,8 @@ namespace Model
 		{
 			cubeAttack.ClearRigidbody();
 			cubeAttack.SetRigidbody(GenerateCube(pointAttack, true).GetComponent<Rigidbody>());
+			
+			Debug.Log("Create Attack");
 		}
 
 		public void CreateWall()
