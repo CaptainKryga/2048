@@ -36,7 +36,7 @@ namespace Model
 		{
 			Score = 0;
 			MaxSize = 0;
-			MaxRank = 1;
+			MaxRank = 2;
 		}
 	}
 }

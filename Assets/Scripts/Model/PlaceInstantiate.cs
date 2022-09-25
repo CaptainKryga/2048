@@ -89,7 +89,6 @@ namespace Model
 				pos.position, pos.rotation,
 				parent).GetComponent<Cube>();
 			int rnd = GetRarityCube(isAttack); 
-			Debug.Log("rnd: " + rnd + " | " + statistics.MaxRank);
 			cube.Init(database.materials[rnd], rnd, this);
 			cube.size = (int)Mathf.Pow(2, rnd + 1);
 
@@ -110,12 +109,12 @@ namespace Model
 			}
 
 			int rnd = Random.Range(0, sum);
-			
+
 			sum = 0;
 			for (int i = 0; i < statistics.MaxRank; i++)
 			{
 				sum += database.chanceDrop[i];
-				if (rnd > sum)
+				if (sum > rnd)
 					return i;
 			}
 
