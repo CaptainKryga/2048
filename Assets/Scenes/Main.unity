@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mPlaceInstantiate: {fileID: 773437962}
-  mWallMoved: {fileID: 63188590}
+  mCubeAttack: {fileID: 773437963}
   mStatistics: {fileID: 2139778929}
   vController: {fileID: 454108982}
 --- !u!1 &284313734
@@ -2303,8 +2303,9 @@ GameObject:
   m_Component:
   - component: {fileID: 773437961}
   - component: {fileID: 773437962}
+  - component: {fileID: 773437963}
   m_Layer: 0
-  m_Name: PlaceInstantiate
+  m_Name: Cube's
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2340,6 +2341,7 @@ MonoBehaviour:
   database: {fileID: 11400000, guid: 59524fbf52e8e4ebeae24ba78ac8fe83, type: 2}
   statistics: {fileID: 2139778929}
   wallMoved: {fileID: 63188590}
+  cubeAttack: {fileID: 773437963}
   parent: {fileID: 1324701680}
   pointAttack: {fileID: 75292245}
   pointsWall:
@@ -2349,6 +2351,18 @@ MonoBehaviour:
   - {fileID: 1159261678}
   - {fileID: 981505346}
   timer: 6
+--- !u!114 &773437963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773437960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8d0acba80f54139b8c1927b6cc93277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &791845549
 GameObject:
   m_ObjectHideFlags: 0

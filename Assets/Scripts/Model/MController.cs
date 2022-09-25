@@ -5,7 +5,7 @@ namespace Model
 	public class MController : MonoBehaviour
 	{
 		[SerializeField] private PlaceInstantiate mPlaceInstantiate;
-		[SerializeField] private WallMoved mWallMoved;
+		[SerializeField] private CubeAttack mCubeAttack;
 		[SerializeField] private Statistics mStatistics;
 
 		[SerializeField] private View.VController vController;
@@ -38,12 +38,12 @@ namespace Model
 
 		public void MoveAttack(Vector3 position)
 		{
-			mPlaceInstantiate.MoveAttack(position);
+			mCubeAttack.MoveAttack(position);
 		}
 
 		public void PushAttack()
 		{
-			mPlaceInstantiate.PushAttack();
+			mPlaceInstantiate.RestartAttack(mCubeAttack.PushAttack());
 		}
 	}
 }

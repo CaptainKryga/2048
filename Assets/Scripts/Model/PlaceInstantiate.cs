@@ -9,17 +9,16 @@ namespace Model
 		[SerializeField] private Statistics statistics;
 
 		[SerializeField] private WallMoved wallMoved;
+		[SerializeField] private CubeAttack cubeAttack;
 		
 		[SerializeField] private Transform parent;
 		[SerializeField] private Transform pointAttack;
 		[SerializeField] private Transform[] pointsWall;
 
-		private Rigidbody attack;
-
 		[SerializeField] private float timer;
-		private float delay, delayAttack;
+		private float delay, delayAttack, delaySecondRestart;
 
-		private bool isAttack;
+		private bool isAttack, isRestart;
 		public bool IsPause { get; set; }
 
 		private void Start()
@@ -35,7 +34,8 @@ namespace Model
 
 			delay -= Time.deltaTime;
 			delayAttack -= Time.deltaTime;
-			
+			delaySecondRestart -= Time.deltaTime;
+
 			if (delay <= 0)
 			{
 				CreateWall();
@@ -48,20 +48,31 @@ namespace Model
 			{
 				CreateAttack();
 			}
+
+			if (isRestart && delaySecondRestart < 0)
+			{
+				isRestart = false;
+				CreateAttack();
+			}
 		}
 
 		public void Restart()
 		{
+			delay = timer;
+
 			ClearScene();
 			CreateWall();
-			CreateAttack();
 			wallMoved.StartMove(timer);
+
+			delaySecondRestart = 0.5f;
+			isRestart = true;
 		}
 
 		private void CreateAttack()
 		{
 			isAttack = false;
-			attack = GenerateCube(pointAttack).GetComponent<Rigidbody>();
+			cubeAttack.ClearRigidbody();
+			cubeAttack.SetRigidbody(GenerateCube(pointAttack).GetComponent<Rigidbody>());
 		}
 
 		public void CreateWall()
@@ -113,29 +124,13 @@ namespace Model
 			statistics.MaxSizeAdd(cube.size);
 		}
 
-		public void MoveAttack(Vector3 position)
+		public void RestartAttack(bool isRestart)
 		{
-			if (!attack)
-				return;
-
-			float x = position.x;
-			if (x < -4.5f || x > 4.5f)
-				return;
-			
-			Vector3 pos = attack.transform.position;
-			attack.transform.position = new Vector3(x, pos.y, pos.z);
-		}
-
-		public void PushAttack()
-		{
-			if (!attack)
-				return;
-			
-			attack.velocity = -Vector3.forward * 30;
-			attack = null;
-
-			delayAttack = 1f;
-			isAttack = true;
+			if (isRestart)
+			{
+				delayAttack = 1f;
+				isAttack = true;
+			}
 		}
 	}
 }
