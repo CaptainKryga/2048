@@ -3,6 +3,7 @@ using Random = UnityEngine.Random;
 
 namespace Model
 {
+	//instantiate controller
 	public class PlaceInstantiate : MonoBehaviour
 	{
 		[SerializeField] private Database database;
@@ -27,6 +28,7 @@ namespace Model
 			delay = timer;
 		}
 
+		//create cubes and moved wall
 		private void Update()
 		{
 			if (IsPause)
@@ -59,6 +61,7 @@ namespace Model
 			}
 		}
 
+		//restart scene
 		public void Restart()
 		{
 			delay = timer;
@@ -71,14 +74,14 @@ namespace Model
 			isRestart = true;
 		}
 
+		//create attack cube
 		private void CreateAttack()
 		{
 			cubeAttack.ClearRigidbody();
 			cubeAttack.SetRigidbody(GenerateCube(pointAttack, true).GetComponent<Rigidbody>());
-			
-			Debug.Log("Create Attack");
 		}
 
+		//create new wave cube on wall
 		public void CreateWall()
 		{
 			for (int i = 0; i < pointsWall.Length; i++)
@@ -87,6 +90,7 @@ namespace Model
 			}
 		}
 
+		//generate cube
 		private Cube GenerateCube(Transform pos, bool isAttack)
 		{
 			Cube cube = Instantiate(database.prefabCube,
@@ -101,11 +105,9 @@ namespace Model
 			return cube;
 		}
 
+		//get now rarity cube
 		private int GetRarityCube(bool isAttack)
 		{
-			// if (isAttack)
-				// return Random.Range(0, statistics.MaxRank);
-
 			int sum = 0;
 			for (int i = 0; i < statistics.MaxRank; i++)
 			{
@@ -129,6 +131,7 @@ namespace Model
 			return 0;
 		}
 
+		//restart clear scene
 		private void ClearScene()
 		{
 			for (int i = 0; i < parent.childCount; i++)
@@ -137,6 +140,7 @@ namespace Model
 			}
 		}
 
+		//collision cube's
 		public void ReInitCube(Cube cube)
 		{
 			statistics.ScoreAdd(cube.size);
@@ -158,6 +162,7 @@ namespace Model
 			statistics.MaxSizeAdd(cube.size);
 		}
 
+		//reload attack
 		public void RestartAttack(bool isRestart)
 		{
 			if (isRestart)

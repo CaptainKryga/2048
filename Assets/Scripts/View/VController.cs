@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace View
 {
+	//global view controller(UI)
 	public class VController : MonoBehaviour
 	{
 		[SerializeField] private Controller.Game cGame;

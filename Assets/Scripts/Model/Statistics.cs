@@ -3,6 +3,7 @@ using View;
 
 namespace Model
 {
+	//game statistics
 	public class Statistics : MonoBehaviour
 	{
 		[SerializeField] private VController vController;
@@ -12,9 +13,9 @@ namespace Model
 		private int maxRank;
 		
 		public int Score { get; private set; }
-
+		//max cube size
 		public int MaxSize { get; private set; }
-
+		//max rank from materials on database
 		public int MaxRank { get; private set; }
 
 		public void ScoreAdd(int score)

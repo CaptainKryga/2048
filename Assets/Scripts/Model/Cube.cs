@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Model
 {
+	//cube control
 	public class Cube : MonoBehaviour
 	{
 		[SerializeField] private MeshRenderer meshRenderer;
@@ -16,6 +17,7 @@ namespace Model
 		public bool isActive;
 		public bool isDestroy;
 		
+		//init
 		public void Init(Material material, int size, PlaceInstantiate pi)
 		{
 			meshRenderer.material = material;
@@ -25,6 +27,7 @@ namespace Model
 			particleSystemRender.material = material;
 		}
 
+		//end cube update on collision
 		public void Init(Material material, GameObject prefabParticle)
 		{
 			meshRenderer.material = material;
@@ -33,17 +36,20 @@ namespace Model
 			particleSystemRender.material = material;
 		}
 
+		//start cube update on collision
 		public void ReInit()
 		{
 			placeInstantiate.ReInitCube(this);
 		}
 
+		//collision effect
 		public void UpdateParticle()
 		{
 			Instantiate(prefabParticle, gameObject.transform.position, Quaternion.identity).
 				GetComponent<CubeParticle>().Init(meshRenderer.material);
 		}
 		
+		//collision's
 		private void OnCollisionEnter(Collision other)
 		{
 			Cube cube = other.gameObject.GetComponent<Cube>();

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Controller
 {
+	//input mouse and push controller
 	public class Mouse : MonoBehaviour
 	{
 		[SerializeField] private MController mController;

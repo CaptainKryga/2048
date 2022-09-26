@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class QSettings : MonoBehaviour
+namespace Model
 {
-	private void Awake()
+	//graphic settings
+	public class QSettings : MonoBehaviour
 	{
-		QualitySettings.maxQueuedFrames = 60;
-		QualitySettings.vSyncCount = 1;
+		private void Awake()
+		{
+			QualitySettings.maxQueuedFrames = 60;
+			QualitySettings.vSyncCount = 1;
+		}
 	}
 }

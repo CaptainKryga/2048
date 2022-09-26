@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Controller
 {
+	//global controller from model
 	public class Game : MonoBehaviour
 	{
 		[SerializeField] private Model.MController mController;

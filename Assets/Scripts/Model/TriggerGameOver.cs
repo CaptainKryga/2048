@@ -1,20 +1,23 @@
-using Model;
 using UnityEngine;
 
-public class TriggerGameOver : MonoBehaviour
+namespace Model
 {
-	[SerializeField] private MController mController;	
-	private void OnTriggerEnter(Collider other)
+	//trigger from end game, red line
+	public class TriggerGameOver : MonoBehaviour
 	{
-		Cube cube = other.GetComponent<Cube>();
-		if (cube)
+		[SerializeField] private MController mController;	
+		private void OnTriggerEnter(Collider other)
 		{
-			if (cube.isActive)
+			Cube cube = other.GetComponent<Cube>();
+			if (cube)
 			{
-				mController.GameOver();
+				if (cube.isActive)
+				{
+					mController.GameOver();
+				}
+				else
+					cube.isActive = true;
 			}
-			else
-				cube.isActive = true;
 		}
 	}
 }

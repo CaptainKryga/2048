@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Model
 {
+	//wall wave animation move
 	public class WallMoved : MonoBehaviour
 	{
 		[SerializeField] private Animation aWall;

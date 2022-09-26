@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Model
 {
+	//global model controller
 	public class MController : MonoBehaviour
 	{
 		[SerializeField] private PlaceInstantiate mPlaceInstantiate;
