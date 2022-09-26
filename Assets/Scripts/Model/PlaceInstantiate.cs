@@ -103,8 +103,8 @@ namespace Model
 
 		private int GetRarityCube(bool isAttack)
 		{
-			if (isAttack)
-				return Random.Range(0, statistics.MaxRank);
+			// if (isAttack)
+				// return Random.Range(0, statistics.MaxRank);
 
 			int sum = 0;
 			for (int i = 0; i < statistics.MaxRank; i++)
@@ -113,13 +113,17 @@ namespace Model
 			}
 
 			int rnd = Random.Range(0, sum);
+			Debug.Log("rnd: " + rnd + " | sum: " + sum);
 
 			sum = 0;
 			for (int i = 0; i < statistics.MaxRank; i++)
 			{
 				sum += database.chanceDrop[i];
 				if (sum > rnd)
+				{
+					Debug.Log("res: " + i);
 					return i;
+				}
 			}
 
 			return 0;
