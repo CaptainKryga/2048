@@ -1,23 +1,11 @@
 # prototype_game-2048
 
-        //инициализация сцены под платформу
-        //Controller.Init
-		//старт зачистка сцены
-		//Controller.Model
-		//генерация стенки кубов
-		//Model.WallInstantiate
-		//движение стенки у генератора кубов
-		//Model.WallMoved
-		//генерация атакующего куба
-		//Model.AttackInstantiate
-		//выбор и запуск атакующего куба
-		//Controller.Mouse
-		//куб объединение
-		//Model.Cube
-		//подсчёт очков
-		//Model.Statistics
-		//триггер финиша конец игры
-		//Model.Finish
-		//пауза
-		//Model.Model
-		//View.Controller
+Demo game about 2048. Launch the cubes, push them into each other and earn points.
+
+![image](https://github.com/CaptainKryga/prototype_game-2048/blob/main/git/2048_few.gif)
+![image](https://github.com/CaptainKryga/prototype_game-2048/blob/main/git/2048_lot.gif)
+
+BUILDS:
+windows: https://drive.google.com/file/d/1ZeV5urr3hKYtmba3XqTYiUoJI48qS4Mv/view?usp=sharing
+macos: https://drive.google.com/file/d/1BQnWErYZfIlW_al1gov4tO4IA_lVxBNZ/view?usp=sharing
+android: https://drive.google.com/file/d/1Vqpokr3_YJQzw5yYAAoelr3VkxFoRG2U/view?usp=sharing
